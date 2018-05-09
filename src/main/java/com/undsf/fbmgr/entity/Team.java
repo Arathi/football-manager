@@ -2,6 +2,7 @@ package com.undsf.fbmgr.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
@@ -11,7 +12,8 @@ import javax.persistence.Id;
 @Entity
 public class Team {
     @Id
-    public int id;
+    @GeneratedValue
+    public Integer id;
 
     public String name;
 

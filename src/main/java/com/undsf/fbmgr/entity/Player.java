@@ -1,7 +1,10 @@
 package com.undsf.fbmgr.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
@@ -11,13 +14,15 @@ import javax.persistence.Id;
 @Entity
 public class Player {
     @Id
-    public int id;
+    @GeneratedValue
+    public Integer id;
 
     public String name;
 
     public int gender;
 
     @Column(name = "team_id")
+    @JsonProperty(value = "team_id")
     public int teamId;
 
     public int number;

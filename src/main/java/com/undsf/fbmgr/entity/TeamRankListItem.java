@@ -1,4 +1,4 @@
-package com.undsf.fbmgr.message;
+package com.undsf.fbmgr.entity;
 
 /**
  * Created by Arathi on 2018/5/8.
