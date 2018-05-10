@@ -2,10 +2,11 @@ package com.undsf.fbmgr.service.impl;
 
 import com.undsf.fbmgr.entity.PlayerRankListItem;
 import com.undsf.fbmgr.entity.TeamRankListItem;
+import com.undsf.fbmgr.repository.IRankListRepository;
 import com.undsf.fbmgr.service.IRankListService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,11 +14,14 @@ import java.util.List;
  */
 @Service
 public class RankListService implements IRankListService {
+    @Autowired
+    private IRankListRepository rankRepo;
+
     public List<TeamRankListItem> getTeamRankList(int groupId, int seasonNo) {
-        return new ArrayList<>();
+        return rankRepo.getTeamRankList(groupId, seasonNo);
     }
 
     public List<PlayerRankListItem> getPlayerRankList(int groupId, int seasonNo) {
-        return new ArrayList<>();
+        return rankRepo.getPlayerRankList(groupId, seasonNo);
     }
 }
